@@ -28,7 +28,7 @@ const About = () => {
 
 const Wrapper = styled.div`
   padding: 50px;
-  background-color: var(--grey);
+  background-color: var(--light-grey);
 `;
 const Title = styled.h2`
   font-size: 36px;

@@ -14,7 +14,7 @@ const Contact = () => {
 }
  
 const Wrapper = styled.div`
-    background-color: var(--dark-grey);
+    background-color: var(--light-grey);
     width: 100%;
     padding: 50px;
     

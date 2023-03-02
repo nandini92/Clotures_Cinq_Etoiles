@@ -10,7 +10,7 @@ export default createGlobalStyle`
 
 * {
 	font-family: 'Poppins', sans-serif !important;
-	color: var(--light-grey);
+	color: var(--dark-grey);
 	box-sizing: border-box;
 }
 

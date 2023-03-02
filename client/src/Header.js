@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0px 50px;
+  border-bottom: 1px solid var(--dark-grey);
 `;
 const Logo = styled.img`
     height: 100px;

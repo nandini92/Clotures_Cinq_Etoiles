@@ -30,6 +30,6 @@ function App() {
 const Container = styled.div`
   width: 100vw;
   height: 100%;
-  background-color: var(--dark-grey);
+  background-color: var(--light-grey);
 `;
 export default App;
