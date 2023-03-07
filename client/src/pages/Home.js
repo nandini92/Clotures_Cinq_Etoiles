@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const Home = () => {
-  const [active, setActive] = useState(false);
+  const [height, setHeight] = useState([100,0]);
 
   return (
     <Wrapper>
@@ -24,11 +24,11 @@ const Home = () => {
           <Button>Contact Us</Button>
         </Desc>
         <Images>
-          <Image1 onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            <Hue1 active></Hue1>
+          <Image1 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
+            <Hue1 height={height[0]}></Hue1>
           </Image1>
-          <Image2 onMouseEnter={() => setActive(false)} onMouseLeave={() => setActive(true)}>
-            <Hue2 active></Hue2>
+          <Image2>
+            <Hue2 height={height[1]}></Hue2>
           </Image2>
         </Images>
       </InnerWrapper>
@@ -99,7 +99,7 @@ const Hue1 = styled.div`
   background-color: var(--light-grey);
   z-index: 1;
   opacity: 0.5;
-  height: ${props => props.active ? '100%' : '0px'};
+  height: ${props => `${props.height}%`};
   transition: ease-in-out 1s;
 `;
 const Image2 = styled.div`
@@ -111,7 +111,7 @@ const Hue2 = styled.div`
   background-color: var(--light-grey);
   z-index: 1;
   opacity: 0.5;
-  height: ${props => props.active ? '0px' : '100%'};
+  height: ${props => `${props.height}%`};
   transition: ease-in-out 1s;
 `;
 export default Home;
