@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const About = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about-us">
       <Title>About Us</Title>
       <Description>
         Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis labore
@@ -28,7 +28,8 @@ const About = () => {
 
 const Wrapper = styled.div`
   padding: 50px;
-  background-color: var(--light-grey);
+  margin: 0px 50px;
+  border-bottom: 1px solid var(--dark-grey);
 `;
 const Title = styled.h2`
   font-size: 36px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import logo from "./assets/clotures_cinq_etoiles.jpg";
 
@@ -8,16 +8,18 @@ const Header = () => {
     <Wrapper>
       <Logo src={logo} alt="logo clôtures cinq étoiles" />
       <Links>
-      <Option to="/">Home</Option>
-      <Option>Projects</Option>
-      <Option>About Us</Option>
-      <Option>Contact Us</Option>
+      <Option smooth to="/#home">Home</Option>
+      <Option smooth to='/#projects'>Projects</Option>
+      <Option smooth to='/#about-us'>About Us</Option>
+      <Option smooth to='/#contact'>Contact Us</Option>
       </Links>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  position: fixed;
+  z-index: 100;
   background-color: white;
   height: 110px;
   width: 100vw;
@@ -34,7 +36,7 @@ const Links = styled.div`
     width: 50%;
     justify-content: space-between;
 `
-const Option = styled(NavLink)`
+const Option = styled(HashLink)`
     color: var(--dark-grey);
     text-decoration: none;
     text-align: center;

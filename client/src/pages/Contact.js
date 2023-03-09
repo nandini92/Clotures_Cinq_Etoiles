@@ -5,7 +5,7 @@ import {BsFacebook} from "react-icons/bs";
 
 
 const Contact = () => {
-    return (<Wrapper>
+    return (<Wrapper id="contact">
         <Title>Contact Us</Title>
         <p>Email address: lesclotures5etoiles@outlook.com</p>
         <p>Phone Number: (438) 518-6668</p>

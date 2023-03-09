@@ -5,7 +5,7 @@ const Home = () => {
   const [height, setHeight] = useState([100,0]);
 
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <InnerWrapper>
         <TitleText>
           <Title>Discover</Title>
@@ -39,7 +39,7 @@ const Home = () => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 50px;
+  padding: 150px 50px 50px 50px;
   margin: 0px 50px;
   border-bottom: 1px solid var(--dark-grey);
 `;
@@ -51,7 +51,7 @@ const InnerWrapper = styled.div`
 const TitleText = styled.div`
   padding: 50px 50px 50px 0px;
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   font-size: 98px;
 `;
 const Title = styled.h1`
@@ -83,6 +83,7 @@ const Button = styled.button`
   color: var(--dark-grey);
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
 `;
 const Images = styled.div`
   display: flex;
