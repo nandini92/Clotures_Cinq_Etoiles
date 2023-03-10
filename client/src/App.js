@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "./GlobalStyles";
 import styled from "styled-components";
 
@@ -15,13 +15,9 @@ function App() {
       <Container>
         <Header />
         <Home />
+        <Projects />
         <About />
         <Contact />
-        {/* <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes> */}
       </Container>
     </BrowserRouter>
   );

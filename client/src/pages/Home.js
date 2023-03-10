@@ -41,7 +41,6 @@ const Wrapper = styled.div`
   justify-content: center;
   padding: 150px 50px 50px 50px;
   margin: 0px 50px;
-  border-bottom: 1px solid var(--dark-grey);
 `;
 const InnerWrapper = styled.div`
   display: flex;
