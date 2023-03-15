@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   const [height, setHeight] = useState([100,0]);
@@ -21,7 +22,7 @@ const Home = () => {
             occaecat Lorem. Consectetur cupidatat laboris nostrud officia cillum
             esse pariatur veniam.
           </Description>
-          <Button>Contact Us</Button>
+          <Button smooth to='/#contact'>Contact Us</Button>
         </Desc>
         <Images>
           <Image1 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
@@ -39,8 +40,7 @@ const Home = () => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 150px 50px 50px 50px;
-  margin: 0px 50px;
+  padding: 250px 50px 50px 50px;
 `;
 const InnerWrapper = styled.div`
   display: flex;
@@ -55,10 +55,26 @@ const TitleText = styled.div`
 `;
 const Title = styled.h1`
   font-weight: 500;
+  animation: slideRight 1s;
+  
+  @keyframes slideRight {
+    from {
+      transform: translateX(-800px);
+      opacity: 0;
+    }
+  }
 `;
 const Title2 = styled.h1`
   font-weight: 300;
   padding-left: 50px;
+  animation: slideLeft 1s;
+  
+  @keyframes slideLeft {
+    from {
+      transform: translateX(800px);
+      opacity: 0;
+    }
+  }
 `;
 const Desc = styled.div`
   width: 50%;
@@ -72,14 +88,15 @@ const Description = styled.p`
   line-height: 20px;
   margin: 20px 0px;
 `;
-const Button = styled.button`
+const Button = styled(HashLink)`
+  text-decoration: none;
+  text-align: center;
   background-color: var(--yellow);
-  border: none;
   border-radius: 5px;
   padding: 10px 20px;
   margin-bottom: 50px;
   max-width: 200px;
-  color: var(--dark-grey);
+  color: var(--dark-grey); 
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
@@ -94,6 +111,14 @@ const Image1 = styled.div`
   height: 450px;
   width: 94px;
   margin-right: 50px;
+  animation: slideUp 1s;
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(800px);
+      opacity: 0;
+    }
+  }
 `;
 const Hue1 = styled.div`
   background-color: var(--light-grey);
@@ -106,6 +131,15 @@ const Image2 = styled.div`
   background-image: url("assets/crop2.JPG");
   height: 550px;
   width: 300px;
+
+  animation: slideDown 1s;
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-800px);
+      opacity: 0;
+    }
+  }
 `;
 const Hue2 = styled.div`
   background-color: var(--light-grey);

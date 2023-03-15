@@ -10,11 +10,12 @@ import cloture from "../assets/clotures_piscine.jpg";
 import blackFence from "../assets/black-fence.jpg";
 import blackFence2 from "../assets/black-fence-2.jpg";
 import blackFence3 from "../assets/black-fence-3.jpg";
+import { useEffect } from "react";
 
 const metal = [cloture, blackFence, blackFence2, blackFence3];
 const wood = [woodenFence, woodenFence2, woodenFence3];
 
-const Projects = () => {
+const Projects = ({ opacity }) => {
   const [type, setType] = useState(metal);
   const [count, setCount] = useState(0);
 
@@ -27,7 +28,7 @@ const Projects = () => {
   };
 
   return (
-    <Wrapper id="projects">
+    <Wrapper id="projects" opacity={opacity}>
       <Options>
         <Button onClick={() => {setType(metal); setCount(0)}} active={type === metal}>metal fence</Button>
         <Button onClick={() => {setType(wood); setCount(0)}} active={type === wood}>wood fence</Button>
@@ -42,10 +43,13 @@ const Projects = () => {
 };
 
 const Wrapper = styled.div`
+  opacity: ${props => props.opacity};
+  transition: opacity 0.2s ease-in-out;
   display: flex;
   flex-direction: column;
   padding: 80px;
-  border-bottom: 1px solid var(--dark-grey);
+  margin: 0px 50px;
+  border-top: 1px solid var(--dark-grey);
 `;
 const Options = styled.div`
   align-self: center;
