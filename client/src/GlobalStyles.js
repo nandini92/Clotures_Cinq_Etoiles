@@ -11,7 +11,8 @@ export default createGlobalStyle`
 * {
 	font-family: 'Poppins', sans-serif !important;
 	color: var(--dark-grey);
-	box-sizing: border-box;
+	box-sizing: border-box !important;
+	//border: 1px solid red !important;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

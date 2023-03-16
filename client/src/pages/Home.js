@@ -25,10 +25,10 @@ const Home = () => {
           <Button smooth to='/#contact'>Contact Us</Button>
         </Desc>
         <Images>
-          <Image1 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
+          <Image1>
             <Hue1 height={height[0]}></Hue1>
           </Image1>
-          <Image2>
+          <Image2 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
             <Hue2 height={height[1]}></Hue2>
           </Image2>
         </Images>
@@ -40,7 +40,7 @@ const Home = () => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 250px 50px 50px 50px;
+  padding: 220px 50px 50px 50px;
 `;
 const InnerWrapper = styled.div`
   display: flex;
@@ -54,7 +54,7 @@ const TitleText = styled.div`
   font-size: 98px;
 `;
 const Title = styled.h1`
-  font-weight: 500;
+  font-weight: 300;
   animation: slideRight 1s;
   
   @keyframes slideRight {
@@ -65,7 +65,7 @@ const Title = styled.h1`
   }
 `;
 const Title2 = styled.h1`
-  font-weight: 300;
+  font-weight: 500;
   padding-left: 50px;
   animation: slideLeft 1s;
   
@@ -78,7 +78,7 @@ const Title2 = styled.h1`
 `;
 const Desc = styled.div`
   width: 50%;
-  margin: 280px 50px 0px 0px;
+  margin: 300px 50px 0px 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,14 +103,16 @@ const Button = styled(HashLink)`
 `;
 const Images = styled.div`
   display: flex;
-  justify-content: flex-start;
 `;
 const Image1 = styled.div`
-  align-self: center;
+  position: relative;
+  top: 100px;
+  right: 50px;
   background-image: url("assets/crop1.JPG");
+  background-size: cover;
   height: 450px;
-  width: 94px;
-  margin-right: 50px;
+  width: 100px;
+
   animation: slideUp 1s;
   
   @keyframes slideUp {
@@ -121,7 +123,7 @@ const Image1 = styled.div`
   }
 `;
 const Hue1 = styled.div`
-  background-color: var(--light-grey);
+  background-color: var(--dark-grey);;
   z-index: 1;
   opacity: 0.5;
   height: ${props => `${props.height}%`};
@@ -129,7 +131,8 @@ const Hue1 = styled.div`
 `;
 const Image2 = styled.div`
   background-image: url("assets/crop2.JPG");
-  height: 550px;
+  background-size: cover;
+  height: 600px;
   width: 300px;
 
   animation: slideDown 1s;
@@ -142,7 +145,7 @@ const Image2 = styled.div`
   }
 `;
 const Hue2 = styled.div`
-  background-color: var(--light-grey);
+  background-color: var(--dark-grey);
   z-index: 1;
   opacity: 0.5;
   height: ${props => `${props.height}%`};

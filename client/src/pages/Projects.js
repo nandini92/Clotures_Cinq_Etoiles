@@ -49,7 +49,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding: 80px;
   margin: 0px 50px;
-  border-top: 1px solid var(--dark-grey);
 `;
 const Options = styled.div`
   align-self: center;

@@ -22,10 +22,10 @@ const Wrapper = styled.div`
   z-index: 100;
   background-color: white;
   height: 110px;
-  width: 100vw;
+  width: 100%;
+  padding: 0px 50px;
   display: flex;
   justify-content: space-between;
-  padding: 0px 50px;
   border-bottom: 1px solid var(--dark-grey);
 `;
 const Logo = styled.img`

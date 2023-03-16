@@ -32,6 +32,15 @@ const Wrapper = styled.div`
   padding: 50px;
   margin: 0px 50px;
   border-top: 1px solid var(--dark-grey);
+
+  animation: ${props => props.opacity && "slideUp"} 1s;
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(800px);
+      opacity: 0;
+    }
+  }
 `;
 const Title = styled.h2`
   font-size: 36px;

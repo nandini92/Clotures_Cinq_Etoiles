@@ -1,36 +1,89 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
-import {BsFacebook} from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
 
+const Contact = ({ opacity }) => {
+    const form = useRef();
 
-const Contact = ({opacity}) => {
-    return (<Wrapper id="contact" opacity={opacity}>
-        <Title>Contact Us</Title>
-        <p>Email address: lesclotures5etoiles@outlook.com</p>
-        <p>Phone Number: (438) 518-6668</p>
-        <Link><BsFacebook /></Link>
-    </Wrapper>);
-}
- 
+    const sendEmail = () => {
+        
+    }
+
+  return (
+    <Wrapper id="contact" opacity={opacity}>
+      <Title>Contact Us</Title>
+      <Container>
+        <div>
+          <p>Email address: lesclotures5etoiles@outlook.com</p>
+          <p>Phone Number: (438) 518-6668</p>
+          <Link
+            target="_blank"
+            to={"https://www.facebook.com/profile.php?id=100089104131045"}
+          >
+            <BsFacebook />
+          </Link>
+        </div>
+        <Form ref={form} onSubmit={() => sendEmail()}>
+          <input
+            type="text"
+            placeholder="Full Name"
+            name="user_name"
+            required
+          />
+          <input type="email" placeholder="Email" name="user_email" required />
+          <textarea name="message" placeholder="Inquiry"></textarea>
+          <Button type="submit">Send Message</Button>
+        </Form>
+      </Container>
+    </Wrapper>
+  );
+};
+
 const Wrapper = styled.div`
-    opacity : ${props => props.opacity};
-    transition: opacity 0.2s ease-in-out;
-    margin: 0px 50px;
-    border-top: 1px solid var(--dark-grey);
-    background-color: var(--light-grey);
-    width: 100%;
-    padding: 50px;
-    
-    p {
-        font-weight: 200;
-        margin: 10px 0px;
+  opacity: ${(props) => props.opacity};
+  margin: 0px 50px;
+  border-top: 1px solid var(--dark-grey);
+  transition: opacity 0.2s ease-in-out;
+  background-color: var(--light-grey);
+  padding: 50px 100px;
+
+  p {
+    font-weight: 200;
+    margin: 10px 0px;
+  }
+`;
+const Title = styled.h2`
+  font-size: 36px;
+  text-align: center;
+`;
+const Container = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0px;
+`
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+
+    * {
+        margin: 5px 0px;
+        width: 30vw;
     }
 `
-const Title = styled.h2`
-    font-size: 36px;
-`
-const Logo = styled.img`
-    background-color: var(--lightgrey);
-`
+const Button = styled.button`
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--yellow);
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  max-width: 200px;
+  color: var(--dark-grey); 
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+`;
 export default Contact;
