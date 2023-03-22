@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background-color: white;
   height: 110px;
   width: 100%;
-  padding: 0px 50px;
+  padding: 0px 100px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--dark-grey);

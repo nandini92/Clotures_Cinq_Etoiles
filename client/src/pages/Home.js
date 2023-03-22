@@ -10,7 +10,7 @@ const Home = () => {
       <InnerWrapper>
         <TitleText>
           <Title>Discover</Title>
-          <Title2>Posibilities</Title2>
+          <Title2>Possibilities</Title2>
         </TitleText>
         <Desc>
           <Description>
@@ -51,7 +51,7 @@ const TitleText = styled.div`
   padding: 50px 50px 50px 0px;
   position: absolute;
   z-index: 1;
-  font-size: 98px;
+  font-size: 100px;
 `;
 const Title = styled.h1`
   font-weight: 300;
@@ -84,9 +84,9 @@ const Desc = styled.div`
   justify-content: space-between;
 `;
 const Description = styled.p`
-  font-weight: 200;
+  font-weight: 300;
   line-height: 20px;
-  margin: 20px 0px;
+  margin: 20px 0px 50px 0px;
 `;
 const Button = styled(HashLink)`
   text-decoration: none;
@@ -106,12 +106,12 @@ const Images = styled.div`
 `;
 const Image1 = styled.div`
   position: relative;
-  top: 100px;
+  top: 110px;
   right: 50px;
   background-image: url("assets/crop1.JPG");
   background-size: cover;
-  height: 450px;
-  width: 100px;
+  height: 500px;
+  width: 150px;
 
   animation: slideUp 1s;
   
@@ -132,8 +132,8 @@ const Hue1 = styled.div`
 const Image2 = styled.div`
   background-image: url("assets/crop2.JPG");
   background-size: cover;
-  height: 600px;
-  width: 300px;
+  height: 500px;
+  width: 350px;
 
   animation: slideDown 1s;
   
