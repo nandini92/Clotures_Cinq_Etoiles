@@ -29,50 +29,75 @@ const Projects = ({ opacity }) => {
 
   return (
     <Wrapper id="projects" opacity={opacity}>
-      <Options>
-        <Button onClick={() => {setType(metal); setCount(0)}} active={type === metal}>metal fence</Button>
-        <Button onClick={() => {setType(wood); setCount(0)}} active={type === wood}>wood fence</Button>
-      </Options>
       <Carousel>
         <ArrowLeft onClick={() => scrollLeft()} />
-        <Image src={type[count]} alt={type[count]} />
+        <Image src={type[count]} alt={type[count]}  opacity={opacity}/>
         <ArrowRight onClick={() => scrollRight()} />
       </Carousel>
+      <Options>
+        <Button
+          onClick={() => {
+            setType(metal);
+            setCount(0);
+          }}
+          active={type === metal}
+        >
+          metal fence
+        </Button>
+        <Button
+          onClick={() => {
+            setType(wood);
+            setCount(0);
+          }}
+          active={type === wood}
+        >
+          wood fence
+        </Button>
+      </Options>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  opacity: ${props => props.opacity};
-  transition: opacity 0.2s ease-in-out;
+  opacity: ${(props) => props.opacity};
+  transition: opacity 1s ease-in-out;
   display: flex;
   flex-direction: column;
-  padding: 80px;
-  margin: 0px 50px;
 `;
+
 const Options = styled.div`
   align-self: center;
 `;
+
 const Button = styled.button`
   margin: 15px;
   border: 1px solid var(--dark-grey);
   border-radius: 5px;
   padding: 5px 20px;
-  color: ${props => props.active ? "var(--light-grey)" : "var(--dark-grey)"};
-  background-color: ${props => props.active ? "var(--dark-grey)" : "var(--light-grey)"};
+  color: ${(props) =>
+    props.active ? "var(--light-grey)" : "var(--dark-grey)"};
+  background-color: ${(props) =>
+    props.active ? "var(--dark-grey)" : "var(--light-grey)"};
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
 `;
+
 const Carousel = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
-`;
-const Image = styled.img`
   height: 650px;
-  max-width: 80%;
 `;
+
+const Image = styled.div`
+  height: 650px;
+  width: 1150px;
+  background-image: url(${props => props.src});
+  transition: height 1s ease-in-out;
+  height: ${(props) => props.opacity ? "650px" : "0px"};
+`;
+
 const ArrowLeft = styled(BsArrowLeftCircleFill)`
   align-self: center;
   height: 1.5em;

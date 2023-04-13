@@ -8,13 +8,6 @@ export default createGlobalStyle`
 	--light-grey: #EEEEEE;
 }
 
-* {
-	font-family: 'Poppins', sans-serif !important;
-	color: var(--dark-grey);
-	box-sizing: border-box !important;
-	//border: 1px solid red !important;
-}
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -62,5 +55,13 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+
+* {
+	font-family: 'Poppins', sans-serif !important;
+	color: var(--dark-grey);
+	box-sizing: border-box !important;
+	//border: 1px solid red !important;
 }
 `;

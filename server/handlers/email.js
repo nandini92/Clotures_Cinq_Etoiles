@@ -11,8 +11,6 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-console.log(transporter);
-
 transporter.verify((error, success) => {
     if(error) {
         console.log(error);
@@ -39,7 +37,7 @@ router.post("/email", (req,res) => {
     transporter.sendMail(mail, (err,data) => {
         if(err){
             console.log(err);
-            res.status(400).json({status: 400, data: req.body, message: "Email was not sent successfully"});
+            res.status(500).json({status: 500, data: req.body, message: "Email was not sent successfully"});
         } else {
             res.status(200).json({status: 200, data: req.body, message: "Email has been sent successfully"});
         }

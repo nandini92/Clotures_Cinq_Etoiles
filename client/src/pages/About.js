@@ -1,54 +1,107 @@
 import styled from "styled-components";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
+import { TfiLock } from "react-icons/tfi";
+import { MdCheckCircle } from "react-icons/md";
 
-const About = ({opacity}) => {
+const About = ({ opacity }) => {
   return (
     <Wrapper id="about-us" opacity={opacity}>
-      <Title>About Us</Title>
-      <Description>
-        Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis labore
-        consectetur Lorem qui consequat proident ipsum eiusmod nostrud dolor
-        duis ullamco. Cupidatat amet dolor irure consectetur in velit quis
-        reprehenderit quis qui. Dolore ullamco eu ea laborum veniam tempor sint
-        labore est nostrud do et non. Consectetur ea veniam ut officia esse anim
-        incididunt. Incididunt adipisicing reprehenderit nisi eiusmod. Voluptate
-        nisi tempor aute enim duis.
-      </Description>
-      <Description>
-        Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis labore
-        consectetur Lorem qui consequat proident ipsum eiusmod nostrud dolor
-        duis ullamco. Cupidatat amet dolor irure consectetur in velit quis
-        reprehenderit quis qui. Dolore ullamco eu ea laborum veniam tempor sint
-        labore est nostrud do et non. Consectetur ea veniam ut officia esse anim
-        incididunt. Incididunt adipisicing reprehenderit nisi eiusmod. Voluptate
-        nisi tempor aute enim duis.
-      </Description>
+      <Separator opacity={opacity} />
+      <Content>
+        <Icons>
+          <div opacity={opacity}>
+            <AiOutlineEyeInvisible style={{ fontSize: "50px" }} />
+            <p>Private</p>
+          </div>
+          <div opacity={opacity}>
+            <TfiLock style={{ fontSize: "50px"}} />
+            <p>Secure</p>
+          </div>
+          <div opacity={opacity}>
+            <MdCheckCircle style={{ fontSize: "50px" }} />
+            <p>Reliable</p>
+          </div>
+        </Icons>
+        <Description opacity={opacity}>
+          <p>
+            Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis
+            labore consectetur Lorem qui consequat proident ipsum eiusmod
+            nostrud dolor duis ullamco. Cupidatat amet dolor irure consectetur
+            in velit quis reprehenderit quis qui. Dolore ullamco eu ea laborum
+            veniam tempor sint labore est nostrud do et non. Consectetur ea
+            veniam ut officia esse anim incididunt. Incididunt adipisicing
+            reprehenderit nisi eiusmod. Voluptate nisi tempor aute enim duis.
+            Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis
+            labore consectetur Lorem qui consequat proident ipsum eiusmod
+            nostrud dolor duis ullamco. Cupidatat amet dolor irure consectetur
+            in velit quis reprehenderit quis qui. Dolore ullamco eu ea laborum
+            veniam tempor sint labore est nostrud do et non. Consectetur ea
+            veniam ut officia esse anim incididunt. Incididunt adipisicing
+            reprehenderit nisi eiusmod. Voluptate nisi tempor aute enim duis.
+          </p>
+        </Description>
+      </Content>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
-  opacity : ${props => props.opacity};
-  transition: opacity 0.2s ease-in-out;
-  padding: 50px;
-  margin: 0px 50px;
-  border-top: 1px solid var(--dark-grey);
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 80px;
+  opacity: ${(props) => props.opacity};
+`;
 
-  animation: ${props => props.opacity && "slideUp"} 1s;
-  
-  @keyframes slideUp {
+const Separator = styled.div`
+  border-top: 1px solid var(--dark-grey);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  animation: ${(props) => props.opacity && "expand"} 1s;
+
+  @keyframes expand {
     from {
-      transform: translateY(800px);
-      opacity: 0;
+      width: 0px;
     }
   }
 `;
-const Title = styled.h2`
-  font-size: 36px;
-  text-align: center;
+
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 80px 0px;
 `;
-const Description = styled.p`
+
+const Icons = styled.div`
+  width: 50%;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    justify-content: space-between;
+  }
+`;
+
+const Description = styled.div`
+  width: 50%;
   font-weight: 200;
   line-height: 20px;
-  margin: 20px 0px;
+
+  animation: ${(props) => props.opacity && "slideLeft"} 1s;
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(800px);
+      opacity: 0;
+    }
+  }
 `;
 export default About;

@@ -9,9 +9,9 @@ const Home = () => {
     <Wrapper id="home">
       <InnerWrapper>
         <TitleText>
-          <Title>Discover</Title>
+          <Title>Discover </Title>
           <Title2>Possibilities</Title2>
-        </TitleText>
+        </TitleText>  
         <Desc>
           <Description>
             Sunt consequat cillum duis excepteur ea adipisicing Lorem occaecat
@@ -20,7 +20,7 @@ const Home = () => {
             consectetur ut incididunt ea ea excepteur deserunt aliqua nulla
             exercitation. Veniam tempor quis aliquip ullamco est amet dolor qui
             occaecat Lorem. Consectetur cupidatat laboris nostrud officia cillum
-            esse pariatur veniam.
+            esse pariatur veniam. Sunt consequat cillum duis excepteur ea adipisicing Lorem occaecat id excepteur irure commodo occaecat. Laborum officia officia eiusmod fugiat velit.
           </Description>
           <Button smooth to='/#contact'>Contact Us</Button>
         </Desc>
@@ -37,10 +37,10 @@ const Home = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding: 220px 50px 50px 50px;
+  padding: 200px 50px 50px 50px;
 `;
 const InnerWrapper = styled.div`
   display: flex;

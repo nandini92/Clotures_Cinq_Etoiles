@@ -11,11 +11,12 @@ import Contact from "./pages/Contact";
 import { useEffect } from "react";
 
 function App() {
-  const [scrollTop, setScrollTop] = useState(0);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollTop(window.scrollY);
+      // Calculate the % of the page that user has scrolled through
+      setScrollPercentage((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -28,19 +29,18 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
+      <Header scrollPercentage={scrollPercentage}/>
       <Container >
-        <Header />
         <Home />
-        <About opacity={scrollTop > 100 ? 1 : 0}/>
-        <Projects opacity={scrollTop > 500 ? 1 : 0}/>
-        <Contact opacity={scrollTop > 1200 ? 1 : 0}/>
+        <About opacity={scrollPercentage > 20 ? 1 : 0}/>
+        <Projects opacity={scrollPercentage > 45 ? 1 : 0}/>
+        <Contact opacity={scrollPercentage > 85 ? 1 : 0}/>
       </Container>
     </BrowserRouter>
   );
 }
 
 const Container = styled.div`
-  width: 100vw;
   height: 100%;
   background-color: var(--light-grey);
 `;

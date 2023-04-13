@@ -16,11 +16,11 @@ const Contact = ({ opacity }) => {
     e.preventDefault();
 
     // TODO: refactor to use Axios
-    fetch('/email',{
-      method: 'POST',
+    fetch("/email", {
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         fullName: fullName.current.value,
@@ -28,21 +28,19 @@ const Contact = ({ opacity }) => {
         message: message.current.value,
       }),
     })
-    .then(res => res.json())
-    .then((data) => {
-      if(data.status === 200) {
-        setFormAlert("Your inquiry has been sent successfully!");
-      } else {
-        setFormAlert("Something has gone wrong! Please try again later.");
-        throw new Error(data.message);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 200) {
+          setFormAlert("Your inquiry has been sent successfully!");
+        } else {
+          setFormAlert("Something has gone wrong! Please try again later.");
+          throw new Error(data.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
-
 
   return (
     <Wrapper id="contact" opacity={opacity}>
@@ -86,9 +84,9 @@ const Contact = ({ opacity }) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   opacity: ${(props) => props.opacity};
-  margin: 0px 100px;
+  margin: 80px 80px 0px 80px;
   border-top: 1px solid var(--dark-grey);
   transition: opacity 0.2s ease-in-out;
   background-color: var(--light-grey);
@@ -97,6 +95,15 @@ const Wrapper = styled.div`
   p {
     font-weight: 300;
     margin: 10px 0px;
+  }
+
+  animation: ${(props) => props.opacity && "slideUp"} 1s;
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(800px);
+      opacity: 0;
+    }
   }
 `;
 const Title = styled.h2`
