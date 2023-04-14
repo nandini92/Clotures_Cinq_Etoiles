@@ -3,6 +3,8 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { TfiLock } from "react-icons/tfi";
 import { MdCheckCircle } from "react-icons/md";
 
+import  { Text } from "../contexts/LanguageContext";
+
 const About = ({ opacity }) => {
   return (
     <Wrapper id="about-us" opacity={opacity}>
@@ -11,33 +13,20 @@ const About = ({ opacity }) => {
         <Icons>
           <div opacity={opacity}>
             <AiOutlineEyeInvisible style={{ fontSize: "50px" }} />
-            <p>Private</p>
+            <p><Text tid="icon1"/></p>
           </div>
           <div opacity={opacity}>
             <TfiLock style={{ fontSize: "50px"}} />
-            <p>Secure</p>
+            <p><Text tid="icon2"/></p>
           </div>
           <div opacity={opacity}>
             <MdCheckCircle style={{ fontSize: "50px" }} />
-            <p>Reliable</p>
+            <p><Text tid="icon3"/></p>
           </div>
         </Icons>
         <Description opacity={opacity}>
           <p>
-            Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis
-            labore consectetur Lorem qui consequat proident ipsum eiusmod
-            nostrud dolor duis ullamco. Cupidatat amet dolor irure consectetur
-            in velit quis reprehenderit quis qui. Dolore ullamco eu ea laborum
-            veniam tempor sint labore est nostrud do et non. Consectetur ea
-            veniam ut officia esse anim incididunt. Incididunt adipisicing
-            reprehenderit nisi eiusmod. Voluptate nisi tempor aute enim duis.
-            Nulla tempor ullamco aute cupidatat nulla eu. Non nostrud duis
-            labore consectetur Lorem qui consequat proident ipsum eiusmod
-            nostrud dolor duis ullamco. Cupidatat amet dolor irure consectetur
-            in velit quis reprehenderit quis qui. Dolore ullamco eu ea laborum
-            veniam tempor sint labore est nostrud do et non. Consectetur ea
-            veniam ut officia esse anim incididunt. Incididunt adipisicing
-            reprehenderit nisi eiusmod. Voluptate nisi tempor aute enim duis.
+            <Text tid="aboutUsDescription"/>
           </p>
         </Description>
       </Content>

@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
 
-const Header = ({scrollPercentage}) => {
+import LanguageSelector from "./LanguageSelector";
+import { Text } from "../contexts/LanguageContext";
+
+const Header = ({ scrollPercentage }) => {
   return (
     <>
       <Wrapper>
@@ -12,21 +15,22 @@ const Header = ({scrollPercentage}) => {
           />
           <Links>
             <Option smooth to="/#home">
-              Home
+              <Text tid="option1" />
             </Option>
             <Option smooth to="/#about-us">
-              About Us
+              <Text tid="option2" />
             </Option>
             <Option smooth to="/#projects">
-              Projects
+              <Text tid="option3" />
             </Option>
             <Option smooth to="/#contact">
-              Contact Us
+              <Text tid="option4" />
             </Option>
           </Links>
+        <LanguageSelector />
         </Contents>
         <ScrollTracker
-          style={{width: `${scrollPercentage}%`}}
+          style={{ width: `${scrollPercentage}%` }}
         ></ScrollTracker>
       </Wrapper>
     </>

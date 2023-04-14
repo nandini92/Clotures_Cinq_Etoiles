@@ -3,6 +3,8 @@ import { useState } from "react";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
+import { Text } from "../contexts/LanguageContext";
+
 import woodenFence from "../assets/wooden-fence.jpg";
 import woodenFence2 from "../assets/wooden-fence-2.jpg";
 import woodenFence3 from "../assets/wooden-fence-3.jpg";
@@ -10,7 +12,6 @@ import cloture from "../assets/clotures_piscine.jpg";
 import blackFence from "../assets/black-fence.jpg";
 import blackFence2 from "../assets/black-fence-2.jpg";
 import blackFence3 from "../assets/black-fence-3.jpg";
-import { useEffect } from "react";
 
 const metal = [cloture, blackFence, blackFence2, blackFence3];
 const wood = [woodenFence, woodenFence2, woodenFence3];
@@ -42,7 +43,7 @@ const Projects = ({ opacity }) => {
           }}
           active={type === metal}
         >
-          metal fence
+          <Text tid="productType1" />
         </Button>
         <Button
           onClick={() => {
@@ -51,7 +52,7 @@ const Projects = ({ opacity }) => {
           }}
           active={type === wood}
         >
-          wood fence
+          <Text tid="productType2" />
         </Button>
       </Options>
     </Wrapper>

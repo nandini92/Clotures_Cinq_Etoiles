@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
+import { Text } from "../contexts/LanguageContext";
 
 const Home = () => {
   const [height, setHeight] = useState([100,0]);
@@ -9,20 +10,14 @@ const Home = () => {
     <Wrapper id="home">
       <InnerWrapper>
         <TitleText>
-          <Title>Discover </Title>
-          <Title2>Possibilities</Title2>
+          <Title><Text tid="landingHeader1" /></Title>
+          <Title2><Text tid="landingHeader2"/></Title2>
         </TitleText>  
         <Desc>
           <Description>
-            Sunt consequat cillum duis excepteur ea adipisicing Lorem occaecat
-            id excepteur irure commodo occaecat. Laborum officia officia eiusmod
-            fugiat velit. Ad culpa elit non irure irure. Aliquip irure ullamco
-            consectetur ut incididunt ea ea excepteur deserunt aliqua nulla
-            exercitation. Veniam tempor quis aliquip ullamco est amet dolor qui
-            occaecat Lorem. Consectetur cupidatat laboris nostrud officia cillum
-            esse pariatur veniam. Sunt consequat cillum duis excepteur ea adipisicing Lorem occaecat id excepteur irure commodo occaecat. Laborum officia officia eiusmod fugiat velit.
+            <Text tid="landingDescription" />
           </Description>
-          <Button smooth to='/#contact'>Contact Us</Button>
+          <Button smooth to='/#contact'><Text tid="option4" /></Button>
         </Desc>
         <Images>
           <Image1>
