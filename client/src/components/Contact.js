@@ -126,17 +126,40 @@ const Form = styled.form`
   }
 `;
 const Button = styled.button`
-  border: none;
-  text-decoration: none;
-  text-align: center;
-  background-color: var(--yellow);
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-bottom: 50px;
-  max-width: 200px;
-  color: var(--dark-grey);
-  font-size: 15px;
-  font-weight: 500;
   cursor: pointer;
+  border: none;
+  color: var(--dark-grey);
+  background-color: var(--yellow);
+  border-radius: 0.5rem;
+  overflow :hidden; 
+  padding: 1rem 2rem;
+  text-align: center;
+  width: 200px;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+
+  &:hover{
+    color: var(--yellow);
+  }
+
+  &::after{
+    background-color: var(--dark-grey);
+    border-radius: 0.5rem;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-110%, 0) rotate(10deg);
+    transform-origin: bottom left;
+    transition: 0.2s transform ease-out;
+    z-index: -1;
+  }
+
+  &:hover::after{
+    transform: translate(0, 0);
+  }
 `;
 export default Contact;

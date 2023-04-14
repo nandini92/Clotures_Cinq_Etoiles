@@ -62,9 +62,11 @@ const Option = styled(HashLink)`
   text-align: center;
   line-height: 100px;
   width: 100%;
+  transition: all 0.35s ease-in-out;
 
   &:hover {
     background-color: var(--yellow);
+    font-size: 1.08em;
   }
 `;
 const ScrollTracker = styled.div`

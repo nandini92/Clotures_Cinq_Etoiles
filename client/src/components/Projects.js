@@ -71,6 +71,7 @@ const Options = styled.div`
 `;
 
 const Button = styled.button`
+  cursor: pointer;
   margin: 15px;
   border: 1px solid var(--dark-grey);
   border-radius: 5px;
@@ -81,7 +82,13 @@ const Button = styled.button`
     props.active ? "var(--dark-grey)" : "var(--light-grey)"};
   font-size: 15px;
   font-weight: 500;
-  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover{
+    color: var(--light-grey);
+    background-color: var(--dark-grey);
+  }
 `;
 
 const Carousel = styled.div`

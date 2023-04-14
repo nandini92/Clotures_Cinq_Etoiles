@@ -84,17 +84,40 @@ const Description = styled.p`
   margin: 20px 0px 50px 0px;
 `;
 const Button = styled(HashLink)`
-  text-decoration: none;
-  text-align: center;
-  background-color: var(--yellow);
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-bottom: 50px;
-  max-width: 200px;
-  color: var(--dark-grey); 
-  font-size: 15px;
-  font-weight: 500;
   cursor: pointer;
+  color: var(--dark-grey);
+  background-color: var(--yellow);
+  border-radius: 0.5rem;
+  overflow :hidden; 
+  padding: 1rem 2rem;
+  text-align: center;
+  width: 200px;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+
+  &:hover{
+    color: var(--yellow);
+  }
+
+  &::after{
+    background-color: var(--dark-grey);
+    border-radius: 0.5rem;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-110%, 0) rotate(10deg);
+    transform-origin: bottom left;
+    transition: 0.2s transform ease-out;
+    z-index: -1;
+  }
+
+  &:hover::after{
+    transform: translate(0, 0);
+  }
 `;
 const Images = styled.div`
   display: flex;
@@ -122,7 +145,7 @@ const Hue1 = styled.div`
   z-index: 1;
   opacity: 0.5;
   height: ${props => `${props.height}%`};
-  transition: ease-in-out 1s;
+  transition: ease-in-out 0.5s;
 `;
 const Image2 = styled.div`
   background-image: url("assets/crop2.JPG");
@@ -144,6 +167,6 @@ const Hue2 = styled.div`
   z-index: 1;
   opacity: 0.5;
   height: ${props => `${props.height}%`};
-  transition: ease-in-out 1s;
+  transition: ease-in-out 0.5s;
 `;
 export default Home;
