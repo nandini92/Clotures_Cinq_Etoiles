@@ -14,19 +14,26 @@ const Home = () => {
           <Title2><Text tid="landingHeader2"/></Title2>
         </TitleText>  
         <Desc>
+        {window.screen.width > 1000 && (
           <Description>
             <Text tid="landingDescription" />
-          </Description>
+        </Description>
+        )}
           <Button smooth to='/#contact'><Text tid="option4" /></Button>
         </Desc>
-        <Images>
-          <Image1>
-            <Hue1 height={height[0]}></Hue1>
-          </Image1>
-          <Image2 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
-            <Hue2 height={height[1]}></Hue2>
-          </Image2>
-        </Images>
+        {
+          window.screen.width > 1000 && (
+            <Images>
+              <Image1>
+                <Hue1 height={height[0]}></Hue1>
+              </Image1>
+              <Image2 onMouseEnter={() => setHeight([0,100])} onMouseLeave={() => setHeight([100,0])}>
+                <Hue2 height={height[1]}></Hue2>
+              </Image2>
+            </Images>
+
+          )
+        }
       </InnerWrapper>
     </Wrapper>
   );
@@ -35,18 +42,37 @@ const Home = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding: 200px 50px 50px 50px;
+  padding-top:200px;
+  height: 100vh;
+
+  @media (width < 1000px) {
+    padding-top: 240px ;
+    background-image: url("assets/jiziming-wfjuNRrY490-unsplash.jpg");
+    background-size: cover;
+    background-position-y: bottom;
+  }
 `;
 const InnerWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 70vw;
+
+  @media (width < 1000px) {
+    display: block;
+  }
 `;
 const TitleText = styled.div`
-  padding: 50px 50px 50px 0px;
+  padding-top: 50px;
   position: absolute;
   z-index: 1;
-  font-size: 100px;
+  font-size: 6.6em;
+
+  @media (width < 1000px) {
+    text-align: center;
+    padding: 0px;
+    position: relative;
+    font-size: 2.5em;
+  }
 `;
 const Title = styled.h1`
   font-weight: 300;
@@ -63,6 +89,10 @@ const Title2 = styled.h1`
   font-weight: 500;
   padding-left: 50px;
   animation: slideLeft 1s;
+
+  @media (width < 1000px) {
+  padding-left: 0px;
+  }
   
   @keyframes slideLeft {
     from {
@@ -77,10 +107,17 @@ const Desc = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (width < 1000px) {
+  width: 100%;
+  margin-top: 150px;
+  align-self: start;
+  align-items: center;
+  }
 `;
 const Description = styled.p`
   font-weight: 300;
-  line-height: 20px;
+  line-height: 1.3em;
   margin: 20px 0px 50px 0px;
 `;
 const Button = styled(HashLink)`
