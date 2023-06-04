@@ -1,38 +1,50 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { HashLink } from "react-router-hash-link";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
 
 import LanguageSelector from "./LanguageSelector";
 import { Text } from "../contexts/LanguageContext";
+import Menu from "./Menu";
+
 
 const Header = ({ scrollPercentage }) => {
+  const [rollDown, setRollDown] = useState(false);
+
   return (
     <>
       <Wrapper>
-        <Contents>
+        <Content>
           <Logo
             src="/assets/clotures_cinq_etoiles.jpg"
             alt="logo clôtures cinq étoiles"
           />
-          <Links>
-            <Option smooth to="/#home">
-              <Text tid="option1" />
-            </Option>
-            <Option smooth to="/#about-us">
-              <Text tid="option2" />
-            </Option>
-            <Option smooth to="/#projects">
-              <Text tid="option3" />
-            </Option>
-            <Option smooth to="/#contact">
-              <Text tid="option4" />
-            </Option>
-          </Links>
-        <LanguageSelector />
-        </Contents>
+          {window.screen.width > 1400 ? (
+            <Links>
+              <Option smooth to="/#home">
+                <Text tid="option1" />
+              </Option>
+              <Option smooth to="/#about-us">
+                <Text tid="option2" />
+              </Option>
+              <Option smooth to="/#projects">
+                <Text tid="option3" />
+              </Option>
+              <Option smooth to="/#contact">
+                <Text tid="option4" />
+              </Option>
+            </Links>
+          )
+          : (!rollDown ? <Burger onClick={() => setRollDown(true)}/> : <Cross onClick={() => setRollDown(false)}/>)
+          }
+            <LanguageSelector />
+        </Content>
         <ScrollTracker
           style={{ width: `${scrollPercentage}%` }}
         ></ScrollTracker>
       </Wrapper>
+      <Menu rollDown={rollDown} setRollDown={setRollDown}/>
     </>
   );
 };
@@ -42,11 +54,15 @@ const Wrapper = styled.div`
   z-index: 100;
   width: 100%;
 `;
-const Contents = styled.div`
-  padding: 0px 250px;
+const Content = styled.div`
+  padding: 0px 25%;
   display: flex;
   background-color: white;
   justify-content: space-between;
+
+  @media (width < 400px) {
+    padding: 0px 10%;
+  }
 `;
 const Logo = styled.img`
   height: 100px;
@@ -72,5 +88,17 @@ const Option = styled(HashLink)`
 const ScrollTracker = styled.div`
   height: 5px;
   background-color: var(--yellow);
+`;
+const Burger = styled(GiHamburgerMenu)`
+  font-size: 1.10em;
+  align-self: center;
+  position: relative;
+  left: 20%;
+`;
+const Cross = styled(RxCross2)`
+  font-size: 1.10em;
+  align-self: center;
+  position: relative;
+  left: 20%;
 `;
 export default Header;
