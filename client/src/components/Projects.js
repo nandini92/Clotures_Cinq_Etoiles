@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { BsArrowLeftCircleFill } from "react-icons/bs";
-import { BsArrowRightCircleFill } from "react-icons/bs";
+import { GrPrevious } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
 
 import { Text } from "../contexts/LanguageContext";
 
@@ -30,11 +30,6 @@ const Projects = ({ opacity }) => {
 
   return (
     <Wrapper id="projects" opacity={opacity}>
-      <Carousel>
-        <ArrowLeft onClick={() => scrollLeft()} />
-        <Image src={type[count]} alt={type[count]}  opacity={opacity}/>
-        <ArrowRight onClick={() => scrollRight()} />
-      </Carousel>
       <Options>
         <Button
           onClick={() => {
@@ -55,6 +50,11 @@ const Projects = ({ opacity }) => {
           <Text tid="productType2" />
         </Button>
       </Options>
+      <Carousel>
+        <ArrowLeft onClick={() => scrollLeft()} />
+        <Image src={type[count]} alt={type[count]} opacity={opacity} />
+        <ArrowRight onClick={() => scrollRight()} />
+      </Carousel>
     </Wrapper>
   );
 };
@@ -85,7 +85,7 @@ const Button = styled.button`
 
   transition: all 0.2s ease-in-out;
 
-  &:hover{
+  &:hover {
     color: var(--light-grey);
     background-color: var(--dark-grey);
   }
@@ -95,24 +95,26 @@ const Carousel = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
-  height: 650px;
 `;
 
 const Image = styled.div`
-  height: 650px;
-  width: 1150px;
-  background-image: url(${props => props.src});
+  width: 60%;
+  background-image: url(${(props) => props.src});
   transition: height 1s ease-in-out;
-  height: ${(props) => props.opacity ? "650px" : "0px"};
+  height: ${(props) => (props.opacity ? "650px" : "0px")};
+
+  @media (width < 1000px) {
+    height: 70vh;
+  }
 `;
 
-const ArrowLeft = styled(BsArrowLeftCircleFill)`
+const ArrowLeft = styled(GrPrevious)`
   align-self: center;
   height: 1.5em;
   width: 1.5em;
   cursor: pointer;
 `;
-const ArrowRight = styled(BsArrowRightCircleFill)`
+const ArrowRight = styled(GrNext)`
   align-self: center;
   height: 1.5em;
   width: 1.5em;

@@ -108,7 +108,7 @@ const Description = styled.div`
 
   @keyframes slideLeft {
     from {
-      transform: translateX(800px);
+      transform: translateX(100%);
       opacity: 0;
     }
   }

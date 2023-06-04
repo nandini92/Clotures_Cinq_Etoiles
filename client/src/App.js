@@ -31,7 +31,7 @@ function App() {
       <Header scrollPercentage={scrollPercentage}/>
       <Container >
         <Home />
-        <About opacity={scrollPercentage > 20 ? 1 : 0}/>
+        <About opacity={scrollPercentage > 30 ? 1 : 0}/>
         <Projects opacity={scrollPercentage > 45 ? 1 : 0}/>
         {/* <Contact opacity={scrollPercentage > 75 ? 1 : 0}/> */}
       </Container>

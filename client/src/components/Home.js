@@ -80,7 +80,7 @@ const Title = styled.h1`
   
   @keyframes slideRight {
     from {
-      transform: translateX(-800px);
+      transform: translateX(-100%);
       opacity: 0;
     }
   }
@@ -96,7 +96,7 @@ const Title2 = styled.h1`
   
   @keyframes slideLeft {
     from {
-      transform: translateX(800px);
+      transform: translateX(100%);
       opacity: 0;
     }
   }
@@ -172,7 +172,7 @@ const Image1 = styled.div`
   
   @keyframes slideUp {
     from {
-      transform: translateY(800px);
+      transform: translateY(100%);
       opacity: 0;
     }
   }
@@ -194,7 +194,7 @@ const Image2 = styled.div`
   
   @keyframes slideDown {
     from {
-      transform: translateY(-800px);
+      transform: translateY(-100%);
       opacity: 0;
     }
   }

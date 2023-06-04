@@ -98,6 +98,5 @@ const Cross = styled(RxCross2)`
   font-size: 1.10em;
   align-self: center;
   position: relative;
-  left: 20%;
 `;
 export default Header;
