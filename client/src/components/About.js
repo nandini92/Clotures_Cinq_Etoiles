@@ -40,6 +40,11 @@ const Wrapper = styled.section`
   justify-content: center;
   margin: 80px;
   opacity: ${(props) => props.opacity};
+
+  @media (width < 1000px) {
+    display: block;
+    margin: 10%;
+  }
 `;
 
 const Separator = styled.div`
@@ -61,6 +66,11 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 80px 80px 0px;
+
+  @media (width < 1000px) {
+    display: block;
+    padding: 5%;
+  }
 `;
 
 const Icons = styled.div`
@@ -77,12 +87,22 @@ const Icons = styled.div`
     height: 40%;
     justify-content: space-between;
   }
+
+  @media (width < 1000px) {
+    width: 100%;
+    padding: 10% 0;
+  }
 `;
 
 const Description = styled.div`
   width: 50%;
   font-weight: 200;
   line-height: 20px;
+
+  @media (width < 1000px) {
+    width: 100%;
+    font-size: 0.8em;
+  }
 
   animation: ${(props) => props.opacity && "slideLeft"} 1s;
 
