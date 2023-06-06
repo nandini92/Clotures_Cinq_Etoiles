@@ -48,8 +48,8 @@ const Contact = ({ opacity }) => {
       <Title><Text tid="option4" /></Title>
       <Container>
         <div>
-          <p>{dictionary.emailLabel}: lesclotures5etoiles@outlook.com</p>
-          <p>{dictionary.numberLabel}: (438) 518-6668</p>
+          <p><span>{dictionary.emailLabel}</span>: lesclotures5etoiles@outlook.com</p>
+          <p><span>{dictionary.numberLabel}</span>: (438) 518-6668</p>
           <Link
             target="_blank"
             to={"https://www.facebook.com/profile.php?id=100089104131045"}
@@ -95,7 +95,18 @@ const Wrapper = styled.section`
 
   p {
     font-weight: 300;
-    margin: 10px 0px;
+    margin: 10% 0 0 0;
+  }
+
+  span {
+    font-weight: 500;
+  }
+
+  @media (width < 1000px) {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0px;
+    padding: 10%;
   }
 
   animation: ${(props) => props.opacity && "slideUp"} 1s;
@@ -115,14 +126,29 @@ const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 50px 0px;
+    
+  @media (width < 1000px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+  }
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
 
+  @media (width < 1000px) {
+    padding-top: 10%;
+  }
+
   * {
     margin: 5px 0px;
     width: 30vw;
+
+    
+  @media (width < 1000px) {
+    width: 100%;
+  }
   }
 `;
 const Button = styled.button`

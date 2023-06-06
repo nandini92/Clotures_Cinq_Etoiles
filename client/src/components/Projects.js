@@ -98,7 +98,7 @@ const Carousel = styled.div`
 `;
 
 const Image = styled.div`
-  width: 60%;
+  width: 75%;
   background-image: url(${(props) => props.src});
   transition: height 1s ease-in-out;
   height: ${(props) => (props.opacity ? "650px" : "0px")};
