@@ -61,11 +61,15 @@ const Content = styled.div`
   justify-content: space-between;
 
   @media (width < 400px) {
-    padding: 0px 10%;
+    padding: 10px 10% 10px 5%;
   }
 `;
 const Logo = styled.img`
   height: 100px;
+
+  @media (width < 400px) {
+    height: 80px;
+  }
 `;
 const Links = styled.div`
   display: flex;

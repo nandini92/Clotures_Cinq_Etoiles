@@ -31,7 +31,7 @@ const Dropdown = styled.div`
   z-index: 100;
   top: 100px;
   width: 100%;
-  background-color: white;
+  background-color: var(--light-grey);
   display: flex;
   flex-direction: column;
 `;
