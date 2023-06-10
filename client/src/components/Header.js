@@ -12,6 +12,11 @@ import Menu from "./Menu";
 const Header = ({ scrollPercentage }) => {
   const [rollDown, setRollDown] = useState(false);
 
+  const scrollWithOffset = (el, yOffset) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
+
   return (
     <>
       <Wrapper>
@@ -25,13 +30,13 @@ const Header = ({ scrollPercentage }) => {
               <Option smooth to="/#home">
                 <Text tid="option1" />
               </Option>
-              <Option smooth to="/#about-us">
+              <Option smooth to="/#about-us"  scroll={el => scrollWithOffset(el, -300)}>
                 <Text tid="option2" />
               </Option>
               <Option smooth to="/#projects">
                 <Text tid="option3" />
               </Option>
-              <Option smooth to="/#contact">
+              <Option smooth to="/#contact" >
                 <Text tid="option4" />
               </Option>
             </Links>

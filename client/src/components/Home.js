@@ -106,7 +106,7 @@ const Desc = styled.div`
   margin: 300px 50px 0px 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: top;
 
   @media (width < 1000px) {
   width: 100%;
@@ -118,7 +118,7 @@ const Desc = styled.div`
 const Description = styled.p`
   font-weight: 300;
   line-height: 1.3em;
-  margin: 20px 0px 50px 0px;
+  margin-bottom: 50px;
 `;
 const Button = styled(HashLink)`
   cursor: pointer;
