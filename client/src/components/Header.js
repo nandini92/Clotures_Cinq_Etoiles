@@ -55,7 +55,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 const Content = styled.div`
-  padding: 0px 25%;
+  padding: 0px 15%;
   display: flex;
   background-color: white;
   justify-content: space-between;
@@ -80,6 +80,7 @@ const Option = styled(HashLink)`
   color: var(--dark-grey);
   text-decoration: none;
   text-align: center;
+  white-space: nowrap;
   line-height: 100px;
   width: 100%;
   transition: all 0.35s ease-in-out;

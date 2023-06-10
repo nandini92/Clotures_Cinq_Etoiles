@@ -4,55 +4,44 @@ import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 
 import { Text } from "../contexts/LanguageContext";
+import images from "./images.js";
 
-import woodenFence from "../assets/wooden-fence.jpg";
-import woodenFence2 from "../assets/wooden-fence-2.jpg";
-import woodenFence3 from "../assets/wooden-fence-3.jpg";
-import cloture from "../assets/clotures_piscine.jpg";
-import blackFence from "../assets/black-fence.jpg";
-import blackFence2 from "../assets/black-fence-2.jpg";
-import blackFence3 from "../assets/black-fence-3.jpg";
-
-const metal = [cloture, blackFence, blackFence2, blackFence3];
-const wood = [woodenFence, woodenFence2, woodenFence3];
+const fences = ["ornamental", "glass", "frost", "pvc", "karbon", "zen", "commercial"];
 
 const Projects = ({ opacity }) => {
-  const [type, setType] = useState(metal);
-  const [count, setCount] = useState(0);
+  const [type, setType] = useState("ornamental");
+  const [count, setCount] = useState(1);
 
   const scrollLeft = () => {
-    count > 0 ? setCount((count) => count - 1) : setCount(type.length - 1);
+    count > 0 ? setCount((count) => count - 1) : setCount(images[type].length - 1);
   };
 
   const scrollRight = () => {
-    count < type.length - 1 ? setCount((count) => count + 1) : setCount(0);
+    count < images[type].length - 1 ? setCount((count) => count + 1) : setCount(0);
   };
 
   return (
     <Wrapper id="projects" opacity={opacity}>
-      <Options>
-        <Button
-          onClick={() => {
-            setType(metal);
-            setCount(0);
-          }}
-          active={type === metal}
-        >
-          <Text tid="productType1" />
-        </Button>
-        <Button
-          onClick={() => {
-            setType(wood);
-            setCount(0);
-          }}
-          active={type === wood}
-        >
-          <Text tid="productType2" />
-        </Button>
+      <Options>{
+        fences.map((fence, index) => (
+          <Button
+            onClick={() => {
+              setType(fence);
+              setCount(1);
+            }}
+            active={type === fence}
+          >
+            <Text tid={`productType${index + 1}`} />
+          </Button>
+        ))
+        }
       </Options>
       <Carousel>
         <ArrowLeft onClick={() => scrollLeft()} />
-        <Image src={type[count]} alt={type[count]} opacity={opacity} />
+        <MoreImage src={count > 0 ? images[type][count - 1 ] : images[type][images[type].length - 1]} alt={type} opacity={opacity} />
+        <Image src={images[type][count]} alt={type} opacity={opacity} />
+        {/* <FenceDesc></FenceDesc> */}
+        <MoreImage src={count < images[type].length - 1? images[type][count + 1] : images[type][0]} alt={type} opacity={opacity} />
         <ArrowRight onClick={() => scrollRight()} />
       </Carousel>
     </Wrapper>
@@ -98,10 +87,22 @@ const Carousel = styled.div`
 `;
 
 const Image = styled.div`
-  width: 75%;
+  width: 40%;
   background-image: url(${(props) => props.src});
+  background-position: cover;
   transition: height 1s ease-in-out;
   height: ${(props) => (props.opacity ? "650px" : "0px")};
+
+  @media (width < 1000px) {
+    height: 70vh;
+  }
+`;
+const MoreImage = styled.div`
+  align-self: center;
+  width: 15%;
+  background-image: url(${(props) => props.src});
+  transition: height 1s ease-in-out;
+  height: ${(props) => (props.opacity ? "500px" : "0px")};
 
   @media (width < 1000px) {
     height: 70vh;
