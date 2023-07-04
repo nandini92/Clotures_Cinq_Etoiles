@@ -89,7 +89,9 @@ const Carousel = styled.div`
 const Image = styled.div`
   width: 40%;
   background-image: url(${(props) => props.src});
+  background-size: contain;
   background-position: cover;
+  background-repeat: no-repeat;
   transition: height 1s ease-in-out;
   height: ${(props) => (props.opacity ? "650px" : "0px")};
 
@@ -99,6 +101,7 @@ const Image = styled.div`
 `;
 const MoreImage = styled.div`
   align-self: center;
+  background-repeat: no-repeat;
   width: 15%;
   background-image: url(${(props) => props.src});
   transition: height 1s ease-in-out;

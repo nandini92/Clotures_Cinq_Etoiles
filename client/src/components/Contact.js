@@ -48,13 +48,13 @@ const Contact = ({ opacity }) => {
       <Title><Text tid="option4" /></Title>
       <Container>
         <div>
-          <p><span>{dictionary.emailLabel}</span>: lesclotures5etoiles@outlook.com</p>
-          <p><span>{dictionary.numberLabel}</span>: (438) 518-6668</p>
+          <Info><span>{dictionary.emailLabel}</span>: lesclotures5etoiles@outlook.com</Info>
+          <Info><span>{dictionary.numberLabel}</span>: (438) 518-6668</Info>
           <Link
             target="_blank"
             to={"https://www.facebook.com/profile.php?id=100089104131045"}
           >
-            <BsFacebook />
+            <FacebookLogo />
           </Link>
         </div>
         <Form onSubmit={(e) => sendEmail(e)}>
@@ -93,15 +93,6 @@ const Wrapper = styled.section`
   background-color: var(--light-grey);
   padding: 50px 100px;
 
-  p {
-    font-weight: 300;
-    margin: 10% 0 0 0;
-  }
-
-  span {
-    font-weight: 500;
-  }
-
   @media (width < 1000px) {
     display: flex;
     flex-direction: column;
@@ -118,9 +109,21 @@ const Wrapper = styled.section`
     }
   }
 `;
+
+const Info = styled.p`
+  font-weight: 300;
+  margin: 15px 0 ;
+
+  span {
+    font-weight: 500;
+  }
+`
 const Title = styled.h2`
   font-size: 36px;
   text-align: center;
+`;
+const FacebookLogo = styled(BsFacebook)`
+  font-size: 1.5rem;
 `;
 const Container = styled.div`
   display: flex;

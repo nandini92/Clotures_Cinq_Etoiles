@@ -1,9 +1,10 @@
 const images = {
     ornamental: [
-        '../assets/ornamental/clotures_ornamentales_1.jpg',
-        '../assets/ornamental/clotures_ornamentales_2.jpg',
-        '../assets/ornamental/clotures_ornamentales_3.jpg',
-        '../assets/ornamental/clotures_ornamentales_4.jpg',
+        '../assets/ornamental/clotures-ornamentales-1.jpg',
+        '../assets/ornamental/clotures-ornamentales-3.jpg',
+        '../assets/ornamental/clotures-ornamentales-4.jpg',
+        '../assets/ornamental/clotures-ornamentales-13.jpg',
+        '../assets/ornamental/clotures-ornamentales-15.jpg',
     ],
     glass: [
         '../assets/glass/cloture-en-verre-02.jpg',
@@ -27,11 +28,13 @@ const images = {
     ],
     zen: [
         '../assets/zen/Zen-1.jpg',
+        '../assets/zen/Zen-2.jpg',
+        '../assets/zen/Zen-3.jpg',
+        '../assets/zen/Zen-4.jpg',
         '../assets/zen/Zen-5.jpg',
         '../assets/zen/Zen-7.jpg',
     ],
     commercial: [
-        '../assets/commercial/commercial_01.jpg',
         '../assets/commercial/commercial_02.jpg',
         '../assets/commercial/commercial_03.jpg',
         '../assets/commercial/commercial_04.jpg',
