@@ -31,13 +31,13 @@ const Dropdown = styled.div`
   z-index: 100;
   top: 100px;
   width: 100%;
-  background-color: var(--light-grey);
+  background-color: var(--grey);
   display: flex;
   flex-direction: column;
 `;
 
 const Option = styled(HashLink)`
-  color: var(--dark-grey);
+  color: var(--light-grey);
   width: 100%;
   text-decoration: none;
   text-align: center;

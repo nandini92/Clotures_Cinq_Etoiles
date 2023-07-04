@@ -15,25 +15,39 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       // Calculate the % of the page that user has scrolled through
-      setScrollPercentage((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-    }
+      setScrollPercentage(
+        (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+          100
+      );
+    };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return (() => {
-      window.removeEventListener('scroll', handleScroll);
-    })
-  }, [])
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Header scrollPercentage={scrollPercentage}/>
-      <Container >
-        <Home />
-        <About opacity={scrollPercentage > 35 ? 1 : 0}/>
-        <Projects opacity={scrollPercentage > 50 ? 1 : 0}/>
-        <Contact opacity={scrollPercentage > 80 ? 1 : 0}/>
+      <Header scrollPercentage={scrollPercentage} />
+      <Container>
+        {window.screen.width > 1000 ? (
+          <>
+            <Home />
+            <About opacity={scrollPercentage > 35 ? 1 : 0} />
+            <Projects opacity={scrollPercentage > 50 ? 1 : 0} />
+            <Contact opacity={scrollPercentage > 80 ? 1 : 0} />
+          </>
+        ) : (
+          <>
+            <Home />
+            <About opacity={scrollPercentage > 10 ? 1 : 0} />
+            <Projects opacity={scrollPercentage > 60 ? 1 : 0} />
+            <Contact opacity={scrollPercentage > 70 ? 1 : 0} />
+          </>
+        )}
       </Container>
     </BrowserRouter>
   );

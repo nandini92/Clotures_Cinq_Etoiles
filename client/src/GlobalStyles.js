@@ -62,6 +62,6 @@ table {
 	font-family: 'Poppins', sans-serif !important;
 	color: var(--dark-grey);
 	box-sizing: border-box !important;
-	//border: 1px solid red !important;
+	/* border: 1px solid red !important; */
 }
 `;

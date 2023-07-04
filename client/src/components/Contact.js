@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useRef, useState, useContext } from "react";
 import { BsFacebook } from "react-icons/bs";
+import { IoMdMail } from "react-icons/io";
+import { IoCall } from "react-icons/io5";
 
 import { Text, LanguageContext } from "../contexts/LanguageContext";
 
@@ -48,8 +50,8 @@ const Contact = ({ opacity }) => {
       <Title><Text tid="option4" /></Title>
       <Container>
         <div>
-          <Info><span>{dictionary.emailLabel}</span>: lesclotures5etoiles@outlook.com</Info>
-          <Info><span>{dictionary.numberLabel}</span>: (438) 518-6668</Info>
+          <Info><IoMdMail /> lesclotures5etoiles@outlook.com</Info>
+          <Info><IoCall /> (438) 518-6668</Info>
           <Link
             target="_blank"
             to={"https://www.facebook.com/profile.php?id=100089104131045"}
@@ -120,6 +122,7 @@ const Info = styled.p`
 `
 const Title = styled.h2`
   font-size: 36px;
+  margin-bottom: 20px;
   text-align: center;
 `;
 const FacebookLogo = styled(BsFacebook)`
