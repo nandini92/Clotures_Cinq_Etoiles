@@ -8,11 +8,11 @@ import images from "./images.js";
 
 const fences = [
   "ornamental",
-  "glass",
+  "serie5000",
   "frost",
-  "pvc",
-  "karbon",
+  "karbonComposite",
   "zen",
+  "zenTrellis",
   "commercial",
 ];
 
@@ -134,6 +134,7 @@ const MobileCarousel = styled.div`
   overflow-x: auto;
 `
 const Image = styled.div`
+  align-self: center;
   width: 40%;
   background-image: url(${(props) => props.src});
   background-size: contain;
