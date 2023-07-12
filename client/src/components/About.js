@@ -138,8 +138,8 @@ const Icons = styled.div`
 
 const Description = styled.div`
   width: 50%;
-  font-weight: 200;
-  line-height: 20px;
+  font-weight: 300;
+  line-height: 1.5rem;
 
   @media (width < 1000px) {
     width: 100%;

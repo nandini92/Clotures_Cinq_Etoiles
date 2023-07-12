@@ -59,6 +59,7 @@ const Projects = ({ opacity }) => {
             }
             alt={type}
             opacity={opacity}
+            onClick={() => scrollLeft()}
           />
           <Image src={images[type][count]} alt={type} opacity={opacity} />
           <MoreImage
@@ -69,6 +70,7 @@ const Projects = ({ opacity }) => {
             }
             alt={type}
             opacity={opacity}
+            onClick={() => scrollRight()}
           />
           <ArrowRight onClick={() => scrollRight()} />
         </Carousel>
@@ -133,35 +135,31 @@ const MobileCarousel = styled.div`
   display: flex;
   overflow-x: auto;
 `
-const Image = styled.div`
+const Image = styled.img`
   align-self: center;
-  width: 40%;
-  background-image: url(${(props) => props.src});
-  background-size: contain;
-  background-position: cover;
-  background-repeat: no-repeat;
-  transition: height 1s ease-in-out;
-  height: ${(props) => (props.opacity ? "650px" : "0px")};
-
-  @media (width < 1000px) {
-    min-width: 100vw;
-    max-height: 55vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-right: 5px;
-  }
+  min-width: 40%;
+  max-height: 70vh;
 `;
+
+// const Image = styled.div`
+//   align-self: center;
+//   width: 40%;
+//   background-image: url(${(props) => props.src});
+//   background-size: contain;
+//   background-position: cover;
+//   background-repeat: no-repeat;
+//   transition: height 1s ease-in-out;
+//   height: ${(props) => (props.opacity ? "650px" : "0px")};
+// `;
+
 const MoreImage = styled.div`
   align-self: center;
   background-repeat: no-repeat;
   width: 15%;
   background-image: url(${(props) => props.src});
+  background-position: center;
   transition: height 1s ease-in-out;
   height: ${(props) => (props.opacity ? "500px" : "0px")};
-
-  @media (width < 1000px) {
-    height: 70vh;
-  }
 `;
 
 const ArrowLeft = styled(GrPrevious)`

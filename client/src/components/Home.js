@@ -70,7 +70,7 @@ const TitleText = styled.div`
   /* padding-top: 50px; */
   position: relative;
   z-index: 1;
-  font-size: 6.6rem;
+  font-size: 6.5rem;
   margin-bottom: 10%;
 
   @media (width < 1000px) {
@@ -121,7 +121,7 @@ const Title2 = styled.h1`
 // `;
 const Description = styled.p`
   font-weight: 300;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   margin-bottom: 10%;
 `;
 const Button = styled(HashLink)`

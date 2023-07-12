@@ -66,6 +66,6 @@ table {
 }
 
 html {
-	font-size: 1.7vh;
+	font-size: 1.9vh;
 }
 `;
