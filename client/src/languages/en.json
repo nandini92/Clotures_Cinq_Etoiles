@@ -19,6 +19,8 @@
     "productType7": "Commercial",
     "emailLabel" : "Email Address",
     "numberLabel" : "Phone Number",
+    "facebookText" : "Or contact us on Facebook for more information!",
+    "sendButton" : "Send Message",
     "formName" : "Full Name",
     "formEmail" : "Email",
     "fromInquiry" : "Inquiry"
