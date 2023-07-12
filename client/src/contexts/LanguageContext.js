@@ -11,14 +11,14 @@ export const LanguageContext = createContext({
 // Provide language context to App
 export const LanguageProvider = ({children}) => {
     const defaultLanguage = window.localStorage.getItem('user-lang');
-    const [userLanguage, setUserLanguage] = useState(defaultLanguage || 'en');
+    const [userLanguage, setUserLanguage] = useState(defaultLanguage || 'fr');
 
     const provider = {
         userLanguage: userLanguage,
         //derived state - no need for separate state
         dictionary: dictionaryList[userLanguage],
         changeUserLanguage: (selected) => {
-            const newLanguage = languageOptions[selected] ? selected : 'en';
+            const newLanguage = languageOptions[selected] ? selected : 'fr';
             setUserLanguage(newLanguage);
             window.localStorage.setItem('user-lang', newLanguage);
         }
