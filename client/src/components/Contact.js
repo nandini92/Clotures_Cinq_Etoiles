@@ -26,7 +26,7 @@ const Contact = ({ opacity }) => {
 
 const Wrapper = styled.section`
   opacity: ${(props) => props.opacity};
-  margin: 80px 80px 0px 80px;
+  margin: 5% 10% 0px 10%;
   border-top: 1px solid var(--dark-grey);
   transition: opacity 0.2s ease-in-out;
   background-color: var(--light-grey);

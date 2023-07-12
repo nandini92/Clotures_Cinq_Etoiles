@@ -64,4 +64,8 @@ table {
 	box-sizing: border-box !important;
 	/* border: 1px solid red !important; */
 }
+
+html {
+	font-size: 1.7vh;
+}
 `;

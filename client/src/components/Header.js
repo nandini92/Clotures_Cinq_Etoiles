@@ -25,7 +25,7 @@ const Header = ({ scrollPercentage }) => {
             src="/assets/clotures_cinq_etoiles.jpg"
             alt="logo clôtures cinq étoiles"
           />
-          {window.screen.width > 1400 ? (
+          {window.screen.width > 1000 ? (
             <Links>
               <Option smooth to="/#home">
                 <Text tid="option1" />
@@ -57,7 +57,7 @@ const Header = ({ scrollPercentage }) => {
 const Wrapper = styled.div`
   position: fixed;
   z-index: 1000;
-  width: 100%;
+  width: 100vw;
 `;
 const Content = styled.div`
   padding: 0px 15%;
@@ -70,11 +70,7 @@ const Content = styled.div`
   }
 `;
 const Logo = styled.img`
-  height: 100px;
-
-  @media (width < 400px) {
-    height: 80px;
-  }
+  height: 10vh;
 `;
 const Links = styled.div`
   display: flex;

@@ -8,19 +8,18 @@ const Home = () => {
 
   return (
     <Wrapper id="home">
-      <InnerWrapper>
+      <TextWrapper>
         <TitleText>
           <Title><Text tid="landingHeader1" /></Title>
           <Title2><Text tid="landingHeader2"/></Title2>
         </TitleText>  
-        <Desc>
         {window.screen.width > 1000 && (
           <Description>
             <Text tid="landingDescription" />
         </Description>
         )}
           <Button smooth to='/#contact'><Text tid="option4" /></Button>
-        </Desc>
+      </TextWrapper>
         {
           window.screen.width > 1000 && (
             <Images>
@@ -34,7 +33,6 @@ const Home = () => {
 
           )
         }
-      </InnerWrapper>
     </Wrapper>
   );
 };
@@ -42,30 +40,38 @@ const Home = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding-top:200px;
+  padding-top:22vh;
   height: 100vh;
-
-  @media (width < 1000px) {
-    padding-top: 240px ;
-    background-image: url("assets/jiziming-wfjuNRrY490-unsplash.jpg");
-    background-size: cover;
-    background-position-y: bottom;
-  }
-`;
-const InnerWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 70vw;
+  /* margin: 0 15%; */
 
   @media (width < 1000px) {
     display: block;
+    padding-top: 240px;
+    background-image: url("assets/jiziming-wfjuNRrY490-unsplash.jpg");
+    background-size: cover;
+    background-position-y: bottom;
+    margin: 0;
+  }
+`;
+const TextWrapper = styled.div`
+  display: flex;  
+  flex-direction: column;
+  /* margin-right: 10%; */
+  width: 70vh;
+
+  @media (width < 1000px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 const TitleText = styled.div`
-  padding-top: 50px;
-  position: absolute;
+  /* padding-top: 50px; */
+  position: relative;
   z-index: 1;
-  font-size: 6.6em;
+  font-size: 6.6rem;
+  margin-bottom: 10%;
 
   @media (width < 1000px) {
     text-align: center;
@@ -101,24 +107,22 @@ const Title2 = styled.h1`
     }
   }
 `;
-const Desc = styled.div`
-  width: 50%;
-  margin: 300px 50px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
+// const Desc = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: top;
 
-  @media (width < 1000px) {
-  width: 100%;
-  margin-top: 150px;
-  align-self: start;
-  align-items: center;
-  }
-`;
+//   @media (width < 1000px) {
+//   width: 100%;
+//   margin-top: 150px;
+//   align-self: start;
+//   align-items: center;
+//   }
+// `;
 const Description = styled.p`
   font-weight: 300;
-  line-height: 1.3em;
-  margin-bottom: 50px;
+  line-height: 1.3rem;
+  margin-bottom: 10%;
 `;
 const Button = styled(HashLink)`
   cursor: pointer;
@@ -157,16 +161,19 @@ const Button = styled(HashLink)`
   }
 `;
 const Images = styled.div`
+margin-left: 5%;
   display: flex;
+  height: 80vh;
+  width: 50vh;
 `;
 const Image1 = styled.div`
   position: relative;
-  top: 110px;
-  right: 50px;
+  top: 15%;
+  right: 10%;
   background-image: url("assets/crop1.JPG");
   background-size: cover;
-  height: 500px;
-  width: 150px;
+  height: 60%;
+  width: 30%;
 
   animation: slideUp 1s;
   
@@ -187,8 +194,8 @@ const Hue1 = styled.div`
 const Image2 = styled.div`
   background-image: url("assets/crop2.JPG");
   background-size: cover;
-  height: 500px;
-  width: 350px;
+  height: 65%;
+  width: 90%;
 
   animation: slideDown 1s;
   

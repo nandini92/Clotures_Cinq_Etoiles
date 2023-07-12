@@ -112,7 +112,7 @@ const Button = styled.button`
     props.active ? "var(--light-grey)" : "var(--dark-grey)"};
   background-color: ${(props) =>
     props.active ? "var(--dark-grey)" : "var(--light-grey)"};
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 500;
 
   transition: all 0.2s ease-in-out;

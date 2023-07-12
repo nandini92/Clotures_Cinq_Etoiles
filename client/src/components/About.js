@@ -51,7 +51,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 100px 100px 100px;
+  margin: 0 10% 5% 10%;
   opacity: ${(props) => props.opacity};
 
   @media (width < 1000px) {
