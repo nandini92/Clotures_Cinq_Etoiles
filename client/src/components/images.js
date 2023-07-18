@@ -38,6 +38,12 @@ const images = {
     ],
     commercial: [
         '../assets/commercial/commercial_01.jpg'
+    ],
+    glass: [
+        '../assets/glass/cloture-en-verre-1.jpg',
+        '../assets/glass/cloture-en-verre-2.jpg',
+        '../assets/glass/cloture-en-verre-3.jpg',
+        '../assets/glass/cloture-en-verre-4.jpg',
     ]
 };
 
