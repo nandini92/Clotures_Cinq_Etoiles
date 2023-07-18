@@ -57,7 +57,7 @@ const TextWrapper = styled.div`
   display: flex;  
   flex-direction: column;
   /* margin-right: 10%; */
-  width: 70vh;
+  width: 50vw;
 
   @media (width < 1000px) {
     width: 100%;
@@ -70,8 +70,8 @@ const TitleText = styled.div`
   /* padding-top: 50px; */
   position: relative;
   z-index: 1;
-  font-size: 6.5rem;
-  margin-bottom: 10%;
+  font-size: 6rem;
+  margin-bottom: 5vh;
 
   @media (width < 1000px) {
     text-align: center;
@@ -122,7 +122,7 @@ const Title2 = styled.h1`
 const Description = styled.p`
   font-weight: 300;
   line-height: 1.5rem;
-  margin-bottom: 10%;
+  margin-bottom: 5vh;
 `;
 const Button = styled(HashLink)`
   cursor: pointer;

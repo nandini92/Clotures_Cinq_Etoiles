@@ -26,10 +26,7 @@ const Menu = ({rollDown, setRollDown}) => {
   );
 };
 
-const Dropdown = styled.div` 
-  position: fixed;
-  z-index: 100;
-  top: 100px;
+const Dropdown = styled.div`
   width: 100%;
   background-color: var(--grey);
   display: flex;
