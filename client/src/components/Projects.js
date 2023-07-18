@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { GrPrevious } from "react-icons/gr";
-import { GrNext } from "react-icons/gr";
+
+import { ArrowLeft, ArrowRight } from 'react-feather';
+
 
 import { Text } from "../contexts/LanguageContext";
 import images from "./images.js";
@@ -49,8 +50,8 @@ const Projects = ({ opacity }) => {
         ))}
       </Options>
       {window.screen.width > 1000 ? (
+        type !== "commercial" ? (
         <Carousel>
-          <ArrowLeft onClick={() => scrollLeft()} />
           <MoreImage
             src={
               count > 0
@@ -60,7 +61,9 @@ const Projects = ({ opacity }) => {
             alt={type}
             opacity={opacity}
             onClick={() => scrollLeft()}
-          />
+          >
+            <ArrowLeft color="white" size="3rem"/> 
+          </MoreImage>
           <Image src={images[type][count]} alt={type} opacity={opacity} />
           <MoreImage
             src={
@@ -71,13 +74,17 @@ const Projects = ({ opacity }) => {
             alt={type}
             opacity={opacity}
             onClick={() => scrollRight()}
-          />
-          <ArrowRight onClick={() => scrollRight()} />
+          >
+            <ArrowRight color="white" size="3rem"/>
+          </MoreImage>
         </Carousel>
+        ) : (
+          <Image src={images[type][0]} alt={type} opacity={opacity} />
+        )
       ) : (
         <MobileCarousel>
           {images[type].map((image) => {
-            return <Image src={image} alt={type} opacity={opacity} />;
+            return <MobileImage src={image} alt={type} opacity={opacity} />;
           })}
         </MobileCarousel>
       )}
@@ -132,6 +139,7 @@ const Carousel = styled.div`
 `;
 const MobileCarousel = styled.div`
   margin-top: 0;
+  height: 50vh;
   display: flex;
   overflow-x: auto;
 `
@@ -140,7 +148,11 @@ const Image = styled.img`
   min-width: 40%;
   max-height: 70vh;
 `;
-
+const MobileImage = styled.img`
+  align-self: center;
+  height: 100%;
+  margin-right: 5%;
+`;
 // const Image = styled.div`
 //   align-self: center;
 //   width: 40%;
@@ -160,18 +172,10 @@ const MoreImage = styled.div`
   background-position: center;
   transition: height 1s ease-in-out;
   height: ${(props) => (props.opacity ? "500px" : "0px")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;
 
-const ArrowLeft = styled(GrPrevious)`
-  align-self: center;
-  height: 1.5em;
-  width: 1.5em;
-  cursor: pointer;
-`;
-const ArrowRight = styled(GrNext)`
-  align-self: center;
-  height: 1.5em;
-  width: 1.5em;
-  cursor: pointer;
-`;
 export default Projects;
