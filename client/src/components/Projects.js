@@ -177,6 +177,13 @@ const MoreImage = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--dark-grey);
+    background-image: none;
+
+    transition: background-image background-color 1s ease-in-out;
+  }
 `;
 
 export default Projects;

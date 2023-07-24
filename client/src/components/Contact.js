@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { useRef, useContext } from "react";
+import { useContext } from "react";
 import { BsFacebook } from "react-icons/bs";
+import { FaCopyright } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { IoCall } from "react-icons/io5";
+import { IoCall, IoLocation } from "react-icons/io5";
+import { RiInstagramFill } from "react-icons/ri";
 
 import { Text, LanguageContext } from "../contexts/LanguageContext";
 
@@ -12,31 +13,94 @@ const Contact = ({ opacity }) => {
 
   return (
     <Wrapper id="contact" opacity={opacity}>
-      <Title><Text tid="option4" /></Title>
-      <Container>
-          <Info href="mailto:lesclotures5etoiles@outlook.com"><Mail />lesclotures5etoiles@outlook.com</Info>
-          <Info href="tel:+14385186668"><Call />(438) 518-6668</Info>
-          <Info href="https://www.facebook.com/profile.php?id=100089104131045" target="_blank">
-            <Facebook />
+      <ContactWrapper>
+        <Title>
+          <Text tid="ContactTitle" />
+        </Title>
+        <Card>
+          <Info>
+            <Mail />
+            <div>
+              <a
+                href="mailto:lesclotures5etoiles@outlook.com"
+                style={{ fontWeight: 600 }}
+              >
+                lesclotures5etoiles@outlook.com
+              </a>
+              <p>
+                <Text tid="emailPrompt" />
+              </p>
+            </div>
           </Info>
-      </Container>
+          <Info>
+            <Call />
+            <div>
+              <a href="tel:+14 38-518 6668" style={{ fontWeight: 600 }}>
+                (438) 518-6668
+              </a>
+              <p>
+                <Text tid="phonePrompt" />
+              </p>
+            </div>
+          </Info>
+          <Info>
+            <div>
+              <a
+                href="https://www.facebook.com/profile.php?id=100089104131045"
+                target="_blank"
+              >
+                <Facebook />
+              </a>
+            </div>
+            <p>
+              <Text tid="facebookPrompt" />
+            </p>
+          </Info>
+        </Card>
+        {/* <Card>
+          <h3 style={{ fontWeight: 600, textAlign: "center", margin: "15px" }}>
+            Opening Hours
+          </h3>
+          <OpeningHours>
+            <Days>Monday-Friday</Days>
+            <p>9am - 6pm</p>
+          </OpeningHours>
+          <OpeningHours>
+            <Days>Saturday</Days>
+            <p>9am - 4pm</p>
+          </OpeningHours>
+          <OpeningHours>
+            <Days>Sunday</Days>
+            <p>Closed</p>
+          </OpeningHours>
+          <OpeningHours>
+            <Days>Public Holidays</Days>
+            <p>On Selected Days</p>
+          </OpeningHours>
+        </Card> */}
+      </ContactWrapper>
+      <p style={{fontSize: "0.6rem"}}>
+        <FaCopyright />{" "}
+        Clôtures Cinq Étoiles
+      </p>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
   opacity: ${(props) => props.opacity};
-  margin: 5% 10% 0px 10%;
-  border-top: 1px solid var(--dark-grey);
+  margin-top: 5%;
+  padding: 5% 1% 1%;
+  background-color: var(--dark-grey);
   transition: opacity 0.2s ease-in-out;
-  background-color: var(--light-grey);
-  padding: 50px 100px;
 
   @media (width < 1000px) {
-    display: flex;
-    flex-direction: column;
-    margin: 10% 0px;
-    padding: 10%;
+    margin-top: 10%;
+    padding: 1%;
+  }
+
+  *{ 
+    color: var(--light-grey);
   }
 
   animation: ${(props) => props.opacity && "slideUp"} 1s;
@@ -49,39 +113,101 @@ const Wrapper = styled.section`
   }
 `;
 
-
-const Title = styled.h2`
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center;
-`;
-const Container = styled.div`
+const ContactWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 50px;
-    
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 5%;
+
   @media (width < 1000px) {
     display: flex;
     flex-direction: column;
-    margin: 0px;
+    padding: 10%;
   }
 `;
-const Info = styled.a`
-  font-weight: 300;
+
+// const Container = styled.div`
+//   display: flex;
+//   justify-content: space-evenly;
+
+//   @media (width < 1000px) {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 0px;
+//   }
+// `;
+
+const Title = styled.h2`
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--yellow);
+
+  @media (width < 1000px) {
+    padding: 0 0 10% 0;
+  }
+`;
+
+const Card = styled.div`
+  padding: 1% 2%;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--grey);
+  border-radius: 10px;
+  box-shadow: 0px -1px 20px 5px var(--grey);
+
+  @media (width < 1000px) {
+    min-width: 100%;
+    margin-bottom: 5%;
+  }
+`;
+const Info = styled.div`
+  display: flex;
   line-height: 1.5rem;
-  margin: 15px;
+  padding: 5% 0;
 
   @media (width < 1000px) {
     font-size: 0.9rem;
+    padding: 10px 0;
   }
-`
+`;
 const Mail = styled(IoMdMail)`
-  font-size: 1.5rem;
-`
+  font-size: 2rem;
+  margin-right: 15px;
+`;
 const Call = styled(IoCall)`
-  font-size: 1.5rem;
-`
+  font-size: 2rem;
+  margin-right: 15px;
+`;
+// const Pin = styled(IoLocation)`
+//   font-size: 2rem;
+//   margin-right: 15px;
+// `;
 const Facebook = styled(BsFacebook)`
-  font-size: 1.5rem;
-`
+  font-size: 2rem;
+  margin-right: 15px;
+`;
+// const Instagram = styled(RiInstagramFill)`
+//   font-size: 2rem;
+//   margin-right: 15px;
+
+//   @media (width < 1000px) {
+//     margin-right: 5px;
+//   }
+// `;
+
+// const OpeningHours = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   padding: 5px;
+// `;
+
+// const Days = styled.p`
+//   font-weight: 600;
+//   margin-right: 25px;
+// `;
+
 export default Contact;

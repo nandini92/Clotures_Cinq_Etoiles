@@ -36,7 +36,7 @@ function App() {
         {window.screen.width > 1000 ? (
           <>
             <Home />
-            <About opacity={scrollPercentage > 35 ? 1 : 0} />
+            <About opacity={scrollPercentage > 15 ? 1 : 0} />
             <Projects opacity={scrollPercentage > 50 ? 1 : 0} />
             <Contact opacity={scrollPercentage > 80 ? 1 : 0} />
           </>

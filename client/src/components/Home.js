@@ -41,7 +41,7 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   padding-top:22vh;
-  height: 100vh;
+  height: 95vh;
   /* margin: 0 15%; */
 
   @media (width < 1000px) {
@@ -51,6 +51,7 @@ const Wrapper = styled.section`
     background-size: cover;
     background-position-y: bottom;
     margin: 0;
+    height: 100vh;
   }
 `;
 const TextWrapper = styled.div`

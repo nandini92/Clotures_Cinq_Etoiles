@@ -18,11 +18,8 @@
     "productType6": "Zen Trellis",
     "productType7": "Commercial",
     "productType8": "Verre",
-    "emailLabel" : "Adresse Email",
-    "numberLabel" : "Numero Telephone",
-    "facebookText" : "Ou contactez nous sur Facebook pour davantage informations!",
-    "sendButton" : "Envoye Message",
-    "formName" : "Nom Complet",
-    "formEmail" : "Email",
-    "fromInquiry" : "Enquête"
+    "ContactTitle": "Contactez nous",
+    "emailPrompt" : "Envoyez nous un email",
+    "phonePrompt" : "Nous appelez",
+    "facebookPrompt" : "Suivez nous sur Facebook!"
 }
