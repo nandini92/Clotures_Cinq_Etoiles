@@ -10,6 +10,7 @@ import { Text, LanguageContext } from "../contexts/LanguageContext";
 
 const Contact = ({ opacity }) => {
   const { dictionary } = useContext(LanguageContext);
+  const year = new Date;
 
   return (
     <Wrapper id="contact" opacity={opacity}>
@@ -80,8 +81,7 @@ const Contact = ({ opacity }) => {
         </Card> */}
       </ContactWrapper>
       <p style={{fontSize: "0.6rem"}}>
-        <FaCopyright />{" "}
-        Clôtures Cinq Étoiles
+        {year.getFullYear()} <FaCopyright />{" "} Clôtures Cinq Étoiles
       </p>
     </Wrapper>
   );
