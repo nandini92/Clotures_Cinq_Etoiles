@@ -14,7 +14,7 @@ const About = ({ opacity }) => {
           <Avatar src="/assets/AlexandreFagnan.jpg" alt="Founder" />
           <Profile>
           <p>Alexandre Fagnan</p>
-          <p>Founder</p>
+          <p><Text tid="founder" /></p>
           </Profile>
         </Founder>
         <Description opacity={opacity}>
