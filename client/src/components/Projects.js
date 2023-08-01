@@ -50,6 +50,7 @@ const Projects = ({ opacity }) => {
           </Button>
         ))}
       </Options>
+      {window.screen.width < 1000 && <Instructions><Text tid={"instructions"} /><MobileArrowRight color="white" size="2rem" /></Instructions>}
       {window.screen.width > 1000 ? (
         type !== "commercial" ? (
         <Carousel>
@@ -86,7 +87,7 @@ const Projects = ({ opacity }) => {
         <MobileCarousel>
           {images[type].map((image) => {
             return <MobileImage src={image} alt={type} opacity={opacity} />;
-          })}
+          })}\
         </MobileCarousel>
       )}
     </Wrapper>
@@ -185,5 +186,18 @@ const MoreImage = styled.div`
     transition: background-image background-color 1s ease-in-out;
   }
 `;
+const Instructions = styled.div`
+  width: 100%;
+  padding: 3% 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 0.8rem;
 
+  
+`
+const MobileArrowRight = styled(ArrowRight)`
+  background-color: var(--dark-grey);
+  border-radius: 50%;
+`;
 export default Projects;
