@@ -83,7 +83,7 @@ const Founder = styled.div`
 
   @media (width < 1000px) {
     width: 100%;
-    padding: 10% 0;
+    padding: 8% 0;
   }
 `
 const Profile =  styled.div`
@@ -110,7 +110,7 @@ const Content = styled.div`
 
   @media (width < 1000px) {
     display: block;
-    padding: 5%;
+    padding: 0%;
   }
 `;
 
@@ -132,7 +132,7 @@ const Icons = styled.div`
 
   @media (width < 1000px) {
     width: 100%;
-    padding: 10% 0;
+    padding: 5% 0;
   }
 `;
 

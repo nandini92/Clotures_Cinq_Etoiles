@@ -3,7 +3,12 @@ import { HashLink } from "react-router-hash-link";
 
 import { Text } from "../contexts/LanguageContext";
 
-const Menu = ({rollDown, setRollDown}) => {
+const Menu = ({ rollDown, setRollDown }) => {
+  const scrollWithOffset = (el, yOffset) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
+
   return (
     <Dropdown onClick={() => setRollDown(false)}>
       {rollDown && (
@@ -11,10 +16,18 @@ const Menu = ({rollDown, setRollDown}) => {
           <Option smooth to="/#home">
             <Text tid="option1" />
           </Option>
-          <Option smooth to="/#about-us">
+          <Option
+            smooth
+            to="/#about-us"
+            scroll={(el) => scrollWithOffset(el, -100)}
+          >
             <Text tid="option2" />
           </Option>
-          <Option smooth to="/#projects">
+          <Option
+            smooth
+            to="/#projects"
+            scroll={(el) => scrollWithOffset(el, -100)}
+          >
             <Text tid="option3" />
           </Option>
           <Option smooth to="/#contact">

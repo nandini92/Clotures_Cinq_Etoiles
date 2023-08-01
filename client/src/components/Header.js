@@ -35,7 +35,11 @@ const Header = ({ scrollPercentage }) => {
             >
               <Text tid="option2" />
             </Option>
-            <Option smooth to="/#projects">
+            <Option
+              smooth
+              to="/#projects"
+              scroll={(el) => scrollWithOffset(el, -150)}
+            >
               <Text tid="option3" />
             </Option>
             <Option smooth to="/#contact">
