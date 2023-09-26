@@ -16,6 +16,8 @@ const fences = [
   "zenTrellis",
   "commercial",
   "glass",
+  "pvc",
+  "ramp"
 ];
 
 const Projects = ({ opacity }) => {
