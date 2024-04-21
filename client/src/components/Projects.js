@@ -11,13 +11,12 @@ const fences = [
   "ornamental",
   "serie5000",
   "frost",
-  "karbonComposite",
-  "zen",
-  "zenTrellis",
+  "composite",
   "commercial",
   "glass",
-  "pvc",
-  "ramp"
+  "pool",
+  "ramp",
+  "aluminium"
 ];
 
 const Projects = ({ opacity }) => {
@@ -54,7 +53,7 @@ const Projects = ({ opacity }) => {
       </Options>
       {window.screen.width < 1000 && <Instructions><Text tid={"instructions"} /><MobileArrowRight color="white" size="2rem" /></Instructions>}
       {window.screen.width > 1000 ? (
-        type !== "commercial" ? (
+        type !== "aluminium" ? (
         <Carousel>
           <MoreImage
             src={
@@ -89,7 +88,7 @@ const Projects = ({ opacity }) => {
         <MobileCarousel>
           {images[type].map((image) => {
             return <MobileImage src={image} alt={type} opacity={opacity} />;
-          })}\
+          })}
         </MobileCarousel>
       )}
     </Wrapper>
@@ -106,6 +105,9 @@ const Wrapper = styled.div`
 const Options = styled.div`
   align-self: center;
   max-width: 100vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 
   @media (width < 1000px) {
     display: flex;
@@ -171,7 +173,7 @@ const MobileImage = styled.img`
 const MoreImage = styled.div`
   align-self: center;
   background-repeat: no-repeat;
-  width: 15%;
+  width: 5%;
   background-image: url(${(props) => props.src});
   background-position: center;
   transition: height 1s ease-in-out;

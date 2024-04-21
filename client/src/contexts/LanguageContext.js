@@ -4,8 +4,8 @@ import { languageOptions, dictionaryList } from '../languages';
 
 // create the language context with default language
 export const LanguageContext = createContext({
-    userLanguage: 'en',
-    dictionary: dictionaryList.en
+    userLanguage: 'fr',
+    dictionary: dictionaryList.fr
 });
 
 // Provide language context to App
