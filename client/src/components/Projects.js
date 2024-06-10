@@ -114,6 +114,7 @@ const Options = styled.div`
     flex-wrap: nowrap;
     align-self: flex-start;
     overflow-x: auto;
+    justify-content: space-evenly;
   }
 `;
 
@@ -197,8 +198,6 @@ const Instructions = styled.div`
   justify-content: space-evenly;
   align-items: center;
   font-size: 0.8rem;
-
-  
 `
 const MobileArrowRight = styled(ArrowRight)`
   background-color: var(--dark-grey);
