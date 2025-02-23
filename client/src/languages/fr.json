@@ -22,7 +22,9 @@
     "productType8": "Rampe",
     "productType9": "Aluminium",
     "ContactTitle": "Contactez-nous",
-    "emailPrompt" : "Envoyez-nous un courriel.",
+    "emailPrompt" : "Envoyer un message",
+    "quotePrompt" : "Demander une soumission",
+    "jobPrompt": "Demander une job",
     "phonePrompt" : "Appelez-nous directement",
-    "facebookPrompt" : "Suivez-nous sur Facebook pour voir nos projets les plus récents"
+    "facebookPrompt" : "Suivez-nous sur Facebook!"
 }

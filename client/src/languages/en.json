@@ -22,7 +22,9 @@
     "productType8": "Ramps & Railings",
     "productType9": "Aluminium",
     "ContactTitle": "Reach out to us",
-    "emailPrompt" : "Send us an email",
+    "emailPrompt" : "Send a message",
+    "quotePrompt" : "Request a quote",
+    "jobPrompt": "Request a job",
     "phonePrompt" : "Call us",
     "facebookPrompt" : "Give us a follow!"
 }
